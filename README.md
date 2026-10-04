@@ -1,66 +1,63 @@
-# Transmon Qubits: Coupled and Decoupled analytical analysis
+# Analytical Methods for the Resolution of Coupled and Decoupled Transmon Qubits
 
-This repository contains the work developed for a Bachelor's Thesis focused on the theoretical study of superconducting transmon qubits.
+This repository contains the work developed for a Bachelor's Thesis focused on the theoretical and numerical study of transmon qubits.
 
-The project studies the eigenvalues and eigenfunctions of transmon systems using different representations of the Hamiltonian, with particular emphasis on the **Cooper-pair number basis** and the **phase basis**.
+The project investigates the eigenvalues and eigenfunctions of single and coupled transmon systems using analytical methods, matrix algebra and numerical calculations. Particular attention is given to the description of the system in the Cooper-pair number basis and in the phase basis.
 
-## Description
+## Abstract
 
-The main objective of this work is to study the quantum-mechanical description of transmon qubits and to obtain their eigenvalues and eigenfunctions using analytical and numerical methods.
-
-The project is divided into two main parts:
-
-1. **Single transmon**
-
-   The Hamiltonian of a single transmon is studied in the Cooper-pair number basis. The analysis makes use of second quantization and matrix algebra to obtain the eigenvalues and eigenfunctions of the system.
-
-   The results are compared with numerical calculations and with the results obtained using the Python package `scqubits`.
-
-2. **Coupled transmons**
-
-   The system of two coupled transmons is subsequently studied. A decoupling procedure is developed in order to obtain the eigenvalues and eigenfunctions associated with the resulting decoupled system.
-
-The analytical and numerical results show good agreement for the single-transmon system. The study of coupled transmons provides a starting point for further investigation of more complex superconducting-qubit systems.
+The present work studies transmons. Here is explained the existence of two main bases for describing the eigenvalues and eigenfunctions of the system: the Number of Cooper Pair basis and the Phase basis. Firstly, is performed an analysis in the Cooper Pair basis of a single transmon, with the aid of the method of the second quantization and matrix algebra, obtaining an eigenfunction that matches almost equally to the one that generates the python package Scubits, and eigenvalues that match almost entirely the numerical resolution of the Hamiltonian. Secondly, a study of two coupled transmons is done through a decoupling procedure that allows one to find the eigenfunctions and eigenvalues of the decoupled system. Further investigation is needed.
 
 ## Repository contents
 
-The repository contains the following main components:
+The repository contains the Bachelor's Thesis in article format together with the Python scripts used for the analytical and numerical calculations.
 
-```text
-.
-├── README.md
-├── LICENSE
-├── TFG/
-│   └── ...
-└── Code/
-    └── ...
-```
+### Article
 
-### TFG
+**`Analytical methods for the resolution of coupled and decoupled transmon qubits - SARS.pdf`**
 
-This directory contains the Bachelor's Thesis in its revised article-style format.
+This document contains the theoretical development, methodology, calculations and results of the project.
 
-The document presents the theoretical development, methodology, calculations and results of the project in a format intended to resemble a scientific publication.
+The work focuses on:
 
-### Code
+* The Hamiltonian of a single transmon.
+* The Cooper-pair number basis.
+* The phase basis.
+* The calculation of eigenvalues and eigenfunctions.
+* The use of second-quantization methods and matrix algebra.
+* Numerical diagonalization of the Hamiltonian.
+* Comparison with the `scqubits` Python package.
+* The study of two coupled transmons.
+* The decoupling procedure for the coupled system.
+* The calculation of the eigenvalues and eigenfunctions of the resulting decoupled system.
 
-This directory contains the Python code developed for the analytical and numerical calculations presented in the thesis.
+### Python scripts
 
-The code includes the functions and routines used to:
+#### `EIgenvalues_Single_Transmon.py`
 
-* Construct the transmon Hamiltonian.
-* Work in the Cooper-pair number basis.
-* Calculate eigenvalues and eigenfunctions.
-* Perform matrix-based calculations.
-* Compare analytical and numerical results.
-* Compare the results with `scqubits`.
-* Study systems of coupled transmons.
-* Perform the transformations required for the decoupling procedure.
-* Generate the numerical results and figures presented in the thesis.
+Calculates and plots the eigenvalues of a single transmon using the corresponding Hamiltonian matrix.
+
+The results can be used to study the energy spectrum of the transmon and to compare the analytical treatment with numerical calculations.
+
+#### `Eigenfunction_Single_Transmon.py`
+
+Calculates and visualizes the eigenfunctions of a single transmon.
+
+The script is used to study the wave functions obtained from the numerical treatment and to compare them with the corresponding results obtained using `scqubits`.
+
+#### `Eigenvalues_Decoupled_Transmon.py`
+
+Calculates the eigenvalues of the decoupled transmon system obtained after applying the decoupling procedure developed in the thesis.
+
+#### `Eigenfunction_Decoupled_Transmon.py`
+
+Calculates and visualizes the eigenfunctions of the decoupled transmon system using numerical methods.
+
+The script includes the calculation of the corresponding wave functions and their three-dimensional visualization.
 
 ## Theoretical background
 
-A transmon is a type of superconducting qubit derived from the Cooper-pair box regime. Its Hamiltonian can be written as
+The Hamiltonian of a transmon can be written as
 
 $\hat{H} = 4E_C(\hat{n}-n_g)^2 - E_J\cos(\hat{\varphi})$,
 
@@ -72,54 +69,79 @@ where:
 * $n_g$ is the offset charge,
 * $\hat{\varphi}$ is the superconducting phase operator.
 
-Two representations are particularly relevant in this work:
+The transmon can be described using different representations. In this work, particular attention is given to the **Cooper-pair number basis** and the **phase basis**.
 
-* **Cooper-pair number basis**, in which the charge operator is diagonal.
-* **Phase basis**, in which the superconducting phase is used as the relevant coordinate.
+For the single-transmon system, the Hamiltonian is expressed in the Cooper-pair number basis and solved using matrix methods. The resulting eigenvalues and eigenfunctions are subsequently compared with numerical results.
 
-The relationship between these representations provides a useful framework for studying the quantum states of the transmon.
+The study is then extended to a system of two coupled transmons. A transformation is introduced to decouple the system, allowing its eigenvalues and eigenfunctions to be studied in the resulting representation.
 
-## Numerical calculations
+## Numerical methods
 
-The numerical calculations are performed using Python and standard scientific-computing tools.
+The calculations are performed using Python and numerical linear algebra techniques.
 
-The results obtained from the analytical treatment are compared with direct numerical diagonalization of the Hamiltonian.
+The main computational tasks include:
 
-Additionally, the results for the single transmon are compared with the Python package [`scqubits`](https://scqubits.readthedocs.io/), which provides numerical tools for the simulation and analysis of superconducting quantum circuits.
+* Construction of the transmon Hamiltonian.
+* Matrix representation of the Hamiltonian.
+* Numerical diagonalization.
+* Calculation of eigenvalues.
+* Calculation of eigenfunctions.
+* Visualization of the resulting wave functions.
+* Comparison with `scqubits`.
+* Analysis of the decoupled coupled-transmon system.
 
 ## Requirements
 
-The exact dependencies may depend on the particular scripts included in the repository. The main Python packages used in the project include:
+The scripts require Python 3 and the scientific Python packages used in the calculations.
 
-* Python 3
+The main dependencies are:
+
 * NumPy
 * SciPy
 * Matplotlib
 * scqubits
 
-The required packages can be installed using `pip`. For example:
+They can be installed with:
 
 ```bash
 pip install numpy scipy matplotlib scqubits
 ```
 
-If a `requirements.txt` file is provided, the recommended installation method is:
+## How to use
+
+Clone the repository:
 
 ```bash
-pip install -r requirements.txt
+git clone https://github.com/SalRS042/Transmon-Cubits.git
 ```
 
-## Reproducibility
+Move into the repository:
 
-The code included in this repository is intended to reproduce the main analytical and numerical calculations presented in the thesis.
+```bash
+cd Transmon-Cubits
+```
 
-The scripts can be used independently to investigate the properties of single and coupled transmon systems and to reproduce the numerical results discussed in the accompanying article.
+The individual Python scripts can then be executed independently according to the calculation of interest.
 
-## Thesis
+For example:
 
-The complete thesis is available in the `TFG` directory.
+```bash
+python EIgenvalues_Single_Transmon.py
+```
 
-The article-style version of the work contains the theoretical derivations, methodology, results and discussion associated with the code included in this repository.
+or:
+
+```bash
+python Eigenfunction_Single_Transmon.py
+```
+
+The scripts generate the corresponding numerical results and plots.
+
+## Purpose of the repository
+
+The purpose of this repository is to make the theoretical and numerical work developed during the Bachelor's Thesis available together with the corresponding computational tools.
+
+The code can be used as a starting point for further studies of transmon qubits, superconducting quantum circuits and coupled-qubit systems.
 
 ## Author
 
@@ -129,8 +151,14 @@ Bachelor's Thesis in Physics
 
 ## License
 
-This project is distributed under the terms specified in the [`LICENSE`](LICENSE) file.
+This project is distributed under the **GNU General Public License v3.0**.
+
+See the [`LICENSE`](LICENSE) file for the complete license text.
 
 ## Acknowledgements
 
-The author acknowledges the use of the open-source Python package `scqubits` for the numerical analysis and comparison of the transmon systems studied in this work.
+The numerical comparison of the single-transmon system makes use of the Python package `scqubits`.
+
+The author acknowledges the developers and contributors of `scqubits` for providing an open-source framework for the simulation and analysis of superconducting quantum circuits.
+
+Personals acknowledgements are placed in the article.
