@@ -62,7 +62,7 @@ The code includes the functions and routines used to:
 
 A transmon is a type of superconducting qubit derived from the Cooper-pair box regime. Its Hamiltonian can be written as
 
-$ \hat{H} = 4E_C(\hat{n}-n_g)^2 - E_J\cos(\hat{\varphi}) $,
+$\hat{H} = 4E_C(\hat{n}-n_g)^2 - E_J\cos(\hat{\varphi})$,
 
 where:
 
